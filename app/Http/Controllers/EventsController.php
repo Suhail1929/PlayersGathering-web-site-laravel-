@@ -53,7 +53,7 @@ class EventsController extends Controller
         { 
             return redirect('login');
         }
-        return redirect()->route('events.show', ['events' => $events]);
+        return redirect()->route('events.show', ['event' => $events]);
 
 
         /* $validated = $request->validate([
@@ -126,11 +126,11 @@ class EventsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function update(StoreEventsRequest $request, Events $events)
+    public function update(StoreEventsRequest $request, Events $event)
     {
         $request->validated();
-        $events->update($request->input());
-        return redirect()->route('events.show', ['events' => $events]);
+        $event->update($request->input());
+        return redirect()->route('events.show', ['event' => $event]);
        
     }
 

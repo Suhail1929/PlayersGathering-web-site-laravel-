@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\EventsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+Route::resource('events', EventsController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->get(
     '/dashboard',
     [App\Http\Controllers\EventsController::class, 'index'])->name('dashboard');
+Route::get('page1', function () { return view("page1"); })->middleware('auth');

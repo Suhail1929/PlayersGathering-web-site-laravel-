@@ -7,17 +7,6 @@
 <strong>{{$events->title}}</strong>
 {{$events->message}}<br/>
 <em>par {{$events->user->name}}</em><br/>
-@foreach($events->keywords as $keyword)
- @if($loop->first)
- <b>Mots-clés</b> :
- @endif
- {{$keyword->title}}
- @if(!$loop->last)
- ;
- @else
- <br/>
- @endif
-@endforeach
 <a href="{{url('events/')}}">Retour à la liste</a>
 @auth
 @if (time() < strtotime($events->date))
