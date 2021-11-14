@@ -28,6 +28,7 @@ return array(
     'App\\Http\\Requests\\StoreEventsRequest' => $baseDir . '/app/Http/Requests/StoreEventsRequest.php',
     'App\\Models\\Events' => $baseDir . '/app/Models/Events.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
+    'App\\Models\\role' => $baseDir . '/app/Models/role.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
     'App\\Providers\\BroadcastServiceProvider' => $baseDir . '/app/Providers/BroadcastServiceProvider.php',

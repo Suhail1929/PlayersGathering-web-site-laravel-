@@ -24,7 +24,13 @@
     </form></td>
     <td>
       @auth
-   <a class="btn btn-warning" href="{{route('events.edit',$events->id)}}">Editer</a> @else <button type="submit" class="btn btn-secondary">connecter pour participer </button> @endauth
+      
+      @if(Gate::allows('Utilisateur', $events))
+        <a class="btn btn-warning" href="{{route('events.edit',$events->id)}}">Editer</a> 
+        @endif
+   @else <button type="submit" class="btn btn-secondary">connecter pour participer </button> 
+   
+   @endauth
    </td>
   </tr>
   @endforeach

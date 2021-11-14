@@ -23,7 +23,13 @@
     </form></td>
     <td>
       <?php if(auth()->guard()->check()): ?>
-   <a class="btn btn-warning" href="<?php echo e(route('events.edit',$events->id)); ?>">Editer</a> <?php else: ?> <button type="submit" class="btn btn-secondary">connecter pour participer </button> <?php endif; ?>
+      
+      <?php if(Gate::allows('Utilisateur', $events)): ?>
+        <a class="btn btn-warning" href="<?php echo e(route('events.edit',$events->id)); ?>">Editer</a> 
+        <?php endif; ?>
+   <?php else: ?> <button type="submit" class="btn btn-secondary">connecter pour participer </button> 
+   
+   <?php endif; ?>
    </td>
   </tr>
   <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

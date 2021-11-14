@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreEventsRequest;
 use Illuminate\Http\Request;
 use App\Models\Events;
+use Illuminate\Support\Facades\Gate;
 
 class EventsController extends Controller
 {
@@ -55,41 +56,6 @@ class EventsController extends Controller
         }
         return redirect()->route('events.show', ['event' => $events]);
 
-
-        /* $validated = $request->validate([
-             'title' => ['required', 'max:100'],
-             'message' => ['required'],
-             'date' => ['required', 'date']
-         ]);
-        */
-        /*
-        $rules = [
-            'title' => ['required', 'max:100'],
-            'message' => ['required'],
-            'date' => ['required', 'date']
-        ];
-        $msgs = [
-            'title.required' => 'Il faut spécifier un titre',
-            'title.max' => 'Le titre ne doit pas contenir plus de 100 caractères',
-            'message.required' => 'Il faut spécifier un message',
-            'date.required' => 'Il faut spécifier une date',
-            'date.date' => 'Le format de la date est incorrect'
-        ];
-
-        $validated = $request->validate($rules, $msgs);
-        */
-        /*  $events = new events();
-          $events->title = $request->title;
-          $events->message = $request->message;
-          $events->date = $request->date;
-          $events->save();
-          return redirect()->route('events.show', ['events' => $events]);
-        */
-        /*
-        $events = events::create($request->input());
-        $events->save();
-        return redirect()->route('events.show', ['events' => $events]);
-*/
     }
 
     /**
@@ -111,11 +77,18 @@ class EventsController extends Controller
      */
     public function edit($id)
     {
-        return view('events.edit', ['events' => Events::findOrFail($id)]);
+        
         if(!Auth::check())
         { 
             return redirect('login');
         }
+        $event=Events::findOrFail($id);
+        //dd("hhh".$event);
+    if(!Gate::allows('Utilisateur', Auth::id(), $event)){ 
+        //dd("1:".Auth::id."2:".$event);
+        abort('403');
+    }
+    return view('events.edit', ['events' => Events::findOrFail($id)]);
     }
 
     /**
