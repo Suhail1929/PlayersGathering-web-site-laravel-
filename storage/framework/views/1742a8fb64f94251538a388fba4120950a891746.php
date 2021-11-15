@@ -1,5 +1,9 @@
 <?php $__env->startSection('title'); ?> Les 10 dernières actualités <?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('content'); ?>
+<div class="card-header pb-0">
+              <h6>La liste des évènements gaming</h6>
+            </div>
 <table>
   <tbody>
     <?php $__currentLoopData = $eventsList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $events): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -8,9 +12,12 @@
       <td><strong><?php echo e($events->title); ?></strong>
       </br> 
       </td>
-      <td> 
-        <strong>Le nombre maximal de participants est: <i><?php echo e($events->NumP); ?></i> </strong> 
+      <td><strong><?php echo e($events->game); ?></strong>
       </br> 
+      </td>
+      <td> 
+        <strong> <i><?php echo e($events->NumP); ?> </i></strong> Participants
+       
     </td>
     <td><?php echo e(strftime('%d/%m/%Y à %H:%m', strtotime($events->date))); ?></td>
     <td><a class="btn btn-primary" href="<?php echo e(route('events.show', $events->id)); ?>">Consulter</a></td>

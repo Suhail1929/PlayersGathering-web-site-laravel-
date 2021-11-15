@@ -28,6 +28,8 @@ class StoreEventsRequest extends FormRequest
             'message' => ['required'],
             'date' => ['required', 'date' ,'after:now'],  
             'NumP' => ['required','gte:2'],
+            'game' => ['required'],
+            
         ];
     }
     public function attributes()
@@ -36,7 +38,8 @@ class StoreEventsRequest extends FormRequest
             'title' => 'titre',
             'message' => 'massage',
             'date' => "date",
-            'NumP'=>'NumP'
+            'NumP'=>'NumP',
+            'game'=>'game'
         ];
     }
     public function messages()
@@ -48,7 +51,8 @@ class StoreEventsRequest extends FormRequest
             'date.required' => 'Il faut spécifier une date',
             'date.date' => 'Le format de la date est incorrect',
             'NumP.required' => 'Il faut spécifier le nombre des participants',
-            'title.gte' => 'Le nombre des participants doit etre superieur à 1',
+            'NumP.gte' => 'Le nombre des participants doit etre superieur à 1',
+            'game.required' => 'Il faut spécifier un jeu'
         ];
     }
 }

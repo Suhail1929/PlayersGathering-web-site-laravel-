@@ -15,7 +15,8 @@ class Events extends Model
         'title',
         'message',
         'date',
-        'NumP'
+        'NumP',
+        'game',
         
     ];
     // protected $dates = [ 

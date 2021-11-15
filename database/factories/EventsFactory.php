@@ -24,6 +24,7 @@ class EventsFactory extends Factory
     {
         $usersID = DB::table('users')->pluck('id'); 
         return [ 'title' => $this->faker->realText($maxNbChars = 20, $indexSize = 2), 
+        'game' => "autre", 
         'message' => $this->faker->realText($maxNbChars = 200, $indexSize = 2), 
         'date' => $this->faker->dateTimeBetween($startDate = '-1 years'), 
         'user_id' => $this->faker->randomElement($usersID),

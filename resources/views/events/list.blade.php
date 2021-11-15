@@ -1,6 +1,10 @@
 @extends('template')
 @section('title') Les 10 dernières actualités @endsection
+
 @section('content')
+<div class="card-header pb-0">
+              <h6>La liste des évènements gaming</h6>
+            </div>
 <table>
   <tbody>
     @foreach($eventsList as $events)
@@ -9,9 +13,12 @@
       <td><strong>{{$events->title}}</strong>
       </br> 
       </td>
-      <td> 
-        <strong>Le nombre maximal de participants est: <i>{{$events->NumP}}</i> </strong> 
+      <td><strong>{{$events->game}}</strong>
       </br> 
+      </td>
+      <td> 
+        <strong> <i>{{$events->NumP}} </i></strong> Participants
+       
     </td>
     <td>{{strftime('%d/%m/%Y à %H:%m', strtotime($events->date))}}</td>
     <td><a class="btn btn-primary" href="{{route('events.show', $events->id)}}">Consulter</a></td>

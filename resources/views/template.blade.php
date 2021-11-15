@@ -291,9 +291,7 @@
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">
-            <div class="card-header pb-0">
-              <h6>Le meuilleur siteweb pour jouer avec tes potes</h6>
-            </div>
+            
             <div class="card-body px-0 pt-0 pb-2">
               <div class="table-responsive p-0">
                 <form id="formLogout" action="{{url('/logout')}}" method="POST"> @csrf
