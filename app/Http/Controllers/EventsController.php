@@ -16,7 +16,7 @@ class EventsController extends Controller
      */
     public function index()
     {
-        $eventsList = Events::orderBy('date', 'desc')->take(10)->get();
+        $eventsList = Events::orderBy('date', 'desc')->take(50)->get();
         return view('events.list', ['eventsList' => $eventsList]);
 
     }
@@ -84,7 +84,7 @@ class EventsController extends Controller
         }
         $event=Events::findOrFail($id);
         //dd("hhh".$event);
-    if(!Gate::allows('Utilisateur', Auth::id(), $event)){ 
+    if(!Gate::allows('Utilisateur', $event)){ 
         //dd("1:".Auth::id."2:".$event);
         abort('403');
     }

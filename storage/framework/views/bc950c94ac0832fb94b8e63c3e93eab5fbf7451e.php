@@ -32,8 +32,9 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NKDMSK6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 ps ps--active-y" id="sidenav-main">
-    <div class="sidenav-header">
+    <div class="sidenav-header" style="margin-bottom: 10px; display: grid;justify-items: center;">
       <?php if(auth()->guard()->check()): ?>
+      <img style="width:30px;" src="<?php echo e(Auth::user()->profile_photo_path); ?>"/>
       <strong><?php echo e(Auth::user()->name); ?></strong>
       <?php endif; ?>
     

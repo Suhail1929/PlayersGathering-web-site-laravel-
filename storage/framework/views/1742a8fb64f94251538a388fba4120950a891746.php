@@ -15,18 +15,20 @@
     <td><?php echo e(strftime('%d/%m/%Y à %H:%m', strtotime($events->date))); ?></td>
     <td><a class="btn btn-primary" href="<?php echo e(route('events.show', $events->id)); ?>">Consulter</a></td>
     <td><form action="<?php echo e(route('events.destroy', $events->id)); ?>" method="POST">
+    <?php if(Gate::allows('Utilisateur', $events)): ?>
       <?php echo method_field('DELETE'); ?>
       <?php echo csrf_field(); ?>
       <?php if(auth()->guard()->check()): ?>
       <button type="submit" class="btn btn-info">Supprimer</button>
       <?php endif; ?>
+      <?php endif; ?>
     </form></td>
     <td>
       <?php if(auth()->guard()->check()): ?>
-      
-      <?php if(Gate::allows('Utilisateur', $events)): ?>
+        <?php if(Gate::allows('Utilisateur', $events)): ?>
         <a class="btn btn-warning" href="<?php echo e(route('events.edit',$events->id)); ?>">Editer</a> 
         <?php endif; ?>
+    
    <?php else: ?> <button type="submit" class="btn btn-secondary">connecter pour participer </button> 
    
    <?php endif; ?>

@@ -16,18 +16,20 @@
     <td>{{strftime('%d/%m/%Y à %H:%m', strtotime($events->date))}}</td>
     <td><a class="btn btn-primary" href="{{route('events.show', $events->id)}}">Consulter</a></td>
     <td><form action="{{route('events.destroy', $events->id)}}" method="POST">
+    @if(Gate::allows('Utilisateur', $events))
       @method('DELETE')
       @csrf
       @auth
       <button type="submit" class="btn btn-info">Supprimer</button>
       @endauth
+      @endif
     </form></td>
     <td>
       @auth
-      
-      @if(Gate::allows('Utilisateur', $events))
+        @if(Gate::allows('Utilisateur', $events))
         <a class="btn btn-warning" href="{{route('events.edit',$events->id)}}">Editer</a> 
         @endif
+    
    @else <button type="submit" class="btn btn-secondary">connecter pour participer </button> 
    
    @endauth

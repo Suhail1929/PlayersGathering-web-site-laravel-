@@ -26,7 +26,7 @@ class StoreEventsRequest extends FormRequest
         return [
             'title' => ['required', 'max:100'],
             'message' => ['required'],
-            'date' => ['required', 'date' ,'after:today'],  
+            'date' => ['required', 'date' ,'after:now'],  
             'NumP' => ['required','gte:2'],
         ];
     }

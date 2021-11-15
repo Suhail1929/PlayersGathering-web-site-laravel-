@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('profile_photo_path', 2048)->nullable();
             $table->foreignId('id_role')->references('id')->on('roles')->onDelete('cascade');
         });
     }
