@@ -12,10 +12,9 @@
             </div>
         </div>
         <div class="mb-3 row" >
-            <label for="title" class="col-sm-2 col-form-label ">Nom de jeu</label>
-            <div class="d-flex">
-                        <select name="game" value="{{ old('game') }}" class="form-control @error('game') is-invalid @enderror">
-                            <option >Choissez un jeu:</option>
+            <label for="game" class="col-sm-2 col-form-label ">Nom de jeu</label>
+                            <div class="d-flex">
+                            <select name="game" value="{{ old('game') }}" class="form-control @error('game') is-invalid @enderror form-control choix-input">
                             <option value="League of Legends">League of Legends</option>
                             <option value="Counter-Strike: Global Offensive">Counter-Strike: Global Offensive</option>
                             <option value="VALORANT">VALORANT</option>
@@ -61,4 +60,5 @@
                 <a href="{{url('events')}}" class="btn btn-danger mb-1">Annuler</a>
             </div>
     </form>
+    <script>$(".choix-input").select2({ tags: true});</script>
 @endsection

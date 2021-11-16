@@ -28,12 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
         
         Gate::define('Utilisateur', function ($user,$event) {
-            // dd("zzzz".$event);
-            if($user->id===$event->user_id){
-                return 1;
-            }
-            return 0;
-
+            return ($user->id===$event->user_id || $user->id_role==3);
 
         });
     }
