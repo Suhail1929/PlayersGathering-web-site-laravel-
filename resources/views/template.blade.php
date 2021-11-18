@@ -21,8 +21,8 @@
     <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
     <link href="../assets/css/nucleo-svg.css" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-                            <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
 </head>
 
@@ -84,7 +84,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Evènements</span>
+            <span class="nav-link-text ms-1">Evénements</span>
           </a>
         </li>
           @auth
@@ -105,7 +105,7 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Créer un évènement</span>
+            <span class="nav-link-text ms-1">Créer un événement</span>
           </a>
         </li>
  @endauth
@@ -138,7 +138,7 @@
               </svg>
             </div>
             
-            <span href="" class="nav-link-text ms-1">list des utilisateurs</span>
+            <span href="" class="nav-link-text ms-1">Liste des utilisateurs</span>
           </a>
         </li>
         @endif
@@ -180,10 +180,6 @@
         </nav>
         <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
           <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-            <div class="input-group">
-              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
-              <input type="text" class="form-control" placeholder="Type here...">
-            </div>
           </div>
           <ul class="navbar-nav  justify-content-end">
             <li class="nav-item d-flex align-items-center">
@@ -208,15 +204,9 @@
                 </div>
               </a>
             </li>
-            <li class="nav-item px-3 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body p-0">
-                <i class="fa fa-cog fixed-plugin-button-nav cursor-pointer" aria-hidden="true"></i>
-              </a>
-            </li>
+            
             <li class="nav-item dropdown pe-2 d-flex align-items-center">
-              <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                <i class="fa fa-bell cursor-pointer" aria-hidden="true"></i>
-              </a>
+              
               <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
                 <li class="mb-2">
                   <a class="dropdown-item border-radius-md" href="javascript:;">
@@ -314,9 +304,6 @@
  <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 0px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 513px;"></div></div>
 </main>
   <div class="fixed-plugin ps">
-    <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
-      <i class="fa fa-cog py-2" aria-hidden="true"> </i>
-    </a>
     <div class="card shadow-lg ">
 
       <hr class="horizontal dark my-1">
