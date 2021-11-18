@@ -4,15 +4,7 @@
 
 <div class="px-5 py-5 p-lg-0 bg-surface-secondary">
     <div class="d-flex justify-content-center">
-        <div class="col-lg-5 col-xl-4 p-12 p-xl-20 position-fixed start-0 top-0 h-screen overflow-y-hidden bg-primary d-none d-lg-flex flex-column">
-            <!-- Logo -->
-            <a class="d-block" href="#">
-                <img src="https://preview.webpixels.io/web/img/logos/clever-light.svg" class="h-10" alt="...">
-            </a>
-            <!-- Title -->
-            <div class="mt-32 mb-20">
-                <h1 class="ls-tight font-bolder display-5 text-white mb-5">PlayersGathering</h1>
-            </div>
+        <div class="col-lg-5 col-xl-4 p-12 p-xl-20 position-fixed start-0 top-0 h-screen overflow-y-hidden bg-primary d-none d-lg-flex flex-column" style="height: 100%;">
             <!-- Circle -->
             <div class="w-56 h-56 bg-orange-500 rounded-circle position-absolute bottom-0 end-20 transform translate-y-1/3"></div>
         </div>
@@ -21,7 +13,7 @@
                 <div class="col-lg-10 col-md-9 col-xl-6 mx-auto ms-xl-0">
                     <div class="mt-10 mt-lg-5 mb-3 d-flex align-items-center d-lg-block">
                         <h1 class="ls-tight font-bolder h3">
-                            {{ __('Create an account') }}
+                            {{ __('Créer un compte') }}
                         </h1>
                     </div>
                     <form method="POST" action="{{ route('register') }}">
