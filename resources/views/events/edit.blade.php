@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="mb-3 row" >
-            <label for="title" class="col-sm-2 col-form-label ">Nom de jeu</label>
+            <label for="game" class="col-sm-2 col-form-label ">Nom de jeu</label>
             <div class="d-flex">
                         <select name="game" value="{{ old('game') }}" class="form-control @error('game') is-invalid @enderror">
                             <option >Choissez un jeu:</option>

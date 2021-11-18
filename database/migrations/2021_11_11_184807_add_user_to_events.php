@@ -15,7 +15,8 @@ class AddUserToEvents extends Migration
     {
         Schema::table('events', function (Blueprint $table)
         {
-           $table->unsignedBigInteger('user_id'); $table->foreign('user_id')->references('id')->on('users');
+           $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
        });
     }
 
@@ -28,7 +29,7 @@ class AddUserToEvents extends Migration
     {
         Schema::table('events', function (Blueprint $table) 
         {
-            $table->dropForeign('user_id');
+            $table->dropForeign('user_id')->onDelete('cascade');
         });
     }
 }

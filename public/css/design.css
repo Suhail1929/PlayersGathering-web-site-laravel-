@@ -1,5 +1,6 @@
+
 input#password-confirm, input#password, input#email, input#name {
-  margin-bottom: -32px;
+  margin-bottom: -25px;
 }
 table{
     margin-left:1rem!important;

@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreEventsRequest;
 use Illuminate\Http\Request;
 use App\Models\Events;
+use App\Models\User;
 use Illuminate\Support\Facades\Gate;
 
 class EventsController extends Controller
@@ -18,9 +19,7 @@ class EventsController extends Controller
     {
         $eventsList = Events::orderBy('date', 'desc')->take(50)->get();
         return view('events.list', ['eventsList' => $eventsList]);
-
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -47,7 +46,7 @@ class EventsController extends Controller
        
 
         $request->validated();
-        $events = Events::make($request->input()); // à la place de create 
+        $events = Events::make($request->input()); 
         $events ->user()->associate(Auth::id()); $events->save();
         $events->save();
          if(!Auth::check())
@@ -83,9 +82,7 @@ class EventsController extends Controller
             return redirect('login');
         }
         $event=Events::findOrFail($id);
-        //dd("hhh".$event);
     if(!Gate::allows('Utilisateur', $event)){ 
-        //dd("1:".Auth::id."2:".$event);
         abort('403');
     }
     return view('events.edit', ['events' => Events::findOrFail($id)]);
@@ -119,7 +116,8 @@ class EventsController extends Controller
         $events = Events::findOrFail($id);
         $events->delete();
         return redirect()->route('events.index');
-
     }
+   
+    
     
 }

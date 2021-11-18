@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventsController;
+use App\Http\Controllers\UsersGestionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,9 +17,18 @@ use App\Http\Controllers\EventsController;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/users', function () {
+    return view('users.ListUtilisateur');
+});
 Route::resource('events', EventsController::class);
-
+Route::resource('users', UsersGestionController::class);
 Route::middleware(['auth:sanctum', 'verified'])->get(
     '/dashboard',
     [App\Http\Controllers\EventsController::class, 'index'])->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->get(
+        '/users',
+        [App\Http\Controllers\UsersGestionController::class, 'index'])->name('users');
+
 Route::get('page1', function () { return view("page1"); })->middleware('auth');
+

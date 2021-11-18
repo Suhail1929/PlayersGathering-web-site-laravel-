@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->foreignId('id_role')->references('id')->on('roles')->onDelete('cascade');
+            $table->softDeletes();
         });
     }
 
@@ -33,6 +34,9 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('users',function (Blueprint $table)
+        {
+        $table->dropColumn('deleted_at');
+        });
     }
 }

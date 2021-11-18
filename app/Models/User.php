@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Models;
-
+use Laravel\Jetstream\HasProfilePhoto;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable,SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -22,6 +23,7 @@ class User extends Authenticatable
         'email',
         'password',
         'id_role',
+        'profile_photo_url',
     ];
     protected $appends = [
         'profile_photo_url',
@@ -46,5 +48,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    protected $dates = [ 'created_at', 'deleted_at', 'started_at', 'update_at' ];
     public function events() { return $this->hasMany(Events::class); }
+    public function user() { return $this->hasOne(User::class); }
 }
