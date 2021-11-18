@@ -11,12 +11,7 @@
             </a>
             <!-- Title -->
             <div class="mt-32 mb-20">
-                <h1 class="ls-tight font-bolder display-6 text-white mb-5">
-                   PlayersGathering.
-                </h1>
-                <p class="text-white-80">
-                    Maybe some text here will help me see it better. Oh God. Oke, let’s do it then.
-                </p>
+                <h1 class="ls-tight font-bolder display-5 text-white mb-5">PlayersGathering</h1>
             </div>
             <!-- Circle -->
             <div class="w-56 h-56 bg-orange-500 rounded-circle position-absolute bottom-0 end-20 transform translate-y-1/3"></div>
@@ -24,16 +19,15 @@
         <div class="col-12 col-md-9 col-lg-7 offset-lg-5 border-left-lg min-h-lg-screen d-flex flex-column justify-content-center py-lg-16 px-lg-20 position-relative">
             <div class="row">
                 <div class="col-lg-10 col-md-9 col-xl-6 mx-auto ms-xl-0">
-                    <div class="mt-10 mt-lg-5 mb-6 d-flex align-items-center d-lg-block">
-                        <span class="d-inline-block d-lg-block h1 mb-lg-6 me-3">👋</span>
-                        <h1 class="ls-tight font-bolder h2">
+                    <div class="mt-10 mt-lg-5 mb-3 d-flex align-items-center d-lg-block">
+                        <h1 class="ls-tight font-bolder h3">
                             {{ __('Create an account') }}
                         </h1>
                     </div>
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
                         <div class="mb-5">
-                            <label class="form-label" for="email">{{ __('Name') }}</label>
+                            <label class="form-label" for="email">{{ __('Nom') }}</label>
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                             @error('name')
@@ -43,7 +37,7 @@
                             @enderror
                         </div>
                         <div class="mb-5">
-                            <label class="form-label" for="email">{{ __('E-Mail Address') }}</label>
+                            <label class="form-label" for="email">{{ __('Adresse Mail') }}</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
@@ -53,7 +47,7 @@
                             @enderror
                         </div>
                         <div class="mb-5">
-                            <label class="form-label" for="password">{{ __('Password') }}</label>
+                            <label class="form-label" for="password">{{ __('Mot de Passe') }}</label>
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                             @error('password')
@@ -63,7 +57,7 @@
                             @enderror
                         </div>
                         <div class="mb-5">
-                            <label class="form-label" for="password-confirm">{{ __('Confirm Password') }}</label>
+                            <label class="form-label" for="password-confirm">{{ __('Confirmation du mot de passe') }}</label>
                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                         </div>
                         <div>
@@ -72,9 +66,9 @@
                             </button>
                         </div>
                     </form>
-                    <div class="my-6">
-                        <small>{{ __('Already have an account?') }}</small>
-                        <a href="{{ route('login') }}" class="text-warning text-sm font-semibold">{{ __('Sign in') }}</a>
+                    <div class="my-3">
+                        <small>{{ __('Vous avez déjà un compte ?') }}</small>
+                        <a href="{{ route('login') }}" class="text-warning text-sm font-semibold">{{ __('Connectez vous') }}</a>
                     </div>
                 </div>
             </div>
