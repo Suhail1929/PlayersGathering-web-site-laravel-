@@ -11,15 +11,17 @@ class UsersGestionController extends Controller
 {
     public function index()
     {
-        $usersList = User::orderBy('id_role', 'desc')->take(50)->get();
+        $usersList = User::orderBy('id_role', 'Asc')->take(50)->get();
         return view('users.ListeUtilisateur', ['usersList' => $usersList]);
     }
     public function update(StoreUserRequest $request, User $user)
     {
-        dd("update");
+        $request->validate([
+            'email' => 'required|email|unique:users,email,'.$user->id,
+        ]);
         $request->validated();
         $user->update($request->input());
-        return redirect()->route('users.show', ['user' => $user]);
+        return redirect()->route('users', ['user' => $user]);
        
     }
     public function edit($id)
@@ -28,27 +30,26 @@ class UsersGestionController extends Controller
     }
     public function store(StoreUserRequest  $request)
     {   
-       dd("store");
-
+     
+       if(!Auth::check())
+       { 
+           return redirect('login');
+       }
         $request->validated();
         $users = User::make($request->input()); 
         $users ->user()->associate(Auth::id()); $users->save();
         $users->save();
-         if(!Auth::check())
-        { 
-            return redirect('login');
-        }
-        return redirect()->route('users.list');
+        return redirect()->route('users');
 
     }
-    public function showlist()
+    public function showuser($id)
     {
-        return view('users.ListeUtilisateur');
+        return view('users.showuser', ['users' => User::findOrFail($id)]);
     }
     public function destroy($id)
     {
         $users = User::findOrFail($id);
         $users->delete();
-        return redirect()->route('users.index');
+        return redirect()->route('users');
     }
 }
