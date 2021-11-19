@@ -2,7 +2,7 @@
 @section('title') Liste des utilisateurs @endsection
 
 @section('content')
-<div class="card-header pb-0">
+<div class="container-fluid py-0 px-3">
               <h6>La liste des utilisateurs</h6>
             </div>
 <table >

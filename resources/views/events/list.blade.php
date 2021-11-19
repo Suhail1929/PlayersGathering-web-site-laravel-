@@ -6,9 +6,9 @@
   <h6>La liste des événements</h6>
 </div>
 <table>
-  <tbody>
+  <tbody >
     @foreach($eventsList as $events)
-    <tr>
+    <tr style="width:100px;">
       <td><img src="http://cdn.onlinewebfonts.com/svg/img_452021.png" style="width: 20px;" ></td>
       <td><strong>{{$events->title}}</strong>
       </br> 

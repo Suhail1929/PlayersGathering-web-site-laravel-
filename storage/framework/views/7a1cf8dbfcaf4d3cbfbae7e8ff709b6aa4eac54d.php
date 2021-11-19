@@ -173,7 +173,7 @@
   <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ps">
     <!-- Navbar -->
     <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
-      <div class="container-fluid py-1 px-3">
+      <div class="container-fluid py-0 px-3">
         <nav aria-label="breadcrumb">
           
           <h6 class="font-weight-bolder mb-0">PlayersGathering</h6>
@@ -214,7 +214,7 @@
       </div>
     </nav>
     <!-- End Navbar -->
-    <div class="container-fluid py-4">
+    <div class="container-fluid py-0 px-3 ">
       <div class="row">
         <div class="col-12">
           <div class="card mb-4">

@@ -5,9 +5,9 @@
   <h6>La liste des événements</h6>
 </div>
 <table>
-  <tbody>
+  <tbody >
     <?php $__currentLoopData = $eventsList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $events): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-    <tr>
+    <tr style="width:100px;">
       <td><img src="http://cdn.onlinewebfonts.com/svg/img_452021.png" style="width: 20px;" ></td>
       <td><strong><?php echo e($events->title); ?></strong>
       </br> 
