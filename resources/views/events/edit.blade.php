@@ -27,19 +27,19 @@
                             <option >Choissez un jeu :</option>
                             <option value="League of Legends">League of Legends</option>
                             <option value="Counter-Strike: Global Offensive">Counter-Strike: Global Offensive</option>
-                            <option value="VALORANT">VALORANT</option>
-                            <option value="AMONG US">AMONG US</option>
-                            <option value="APEX LEGENDS">APEX LEGENDS</option>
-                            <option value="FORTNITE">FORTNITE</option>
-                            <option value="TEAM FORTRESS 2">TEAM FORTRESS 2</option>
-                            <option value="DOTA 2">DOTA 2</option>
-                            <option value="OVERWATCH">OVERWATCH</option>
-                            <option value="WARZONE">WARZONE</option>
-                            <option value="FIFA 2022">FIFA 2022</option>
-                            <option value="ROCKET LEAGUE">ROCKET LEAGUE</option>
-                            <option value="GRAND THEFT AUTO ONLINE">GRAND THEFT AUTO ONLINE</option>
+                            <option value="VALORANT">Valorant</option>
+                            <option value="AMONG US">Among Us</option>
+                            <option value="APEX LEGENDS">Apex Legends</option>
+                            <option value="FORTNITE">Fortine</option>
+                            <option value="TEAM FORTRESS 2">Team Fortress 2</option>
+                            <option value="DOTA 2">Dota 2</option>
+                            <option value="OVERWATCH">Overwatch</option>
+                            <option value="WARZONE">Warzone</option>
+                            <option value="FIFA 2022">Fifa 2022</option>
+                            <option value="ROCKET LEAGUE">Rocket League</option>
+                            <option value="GRAND THEFT AUTO ONLINE">GTA Online</option>
                             <option value="Minecraft">Minecraft</option>
-                            <option value="autre">autre</option>
+                            <option value="autre">Autre</option>
                         </select>
             </div>
         </div>
