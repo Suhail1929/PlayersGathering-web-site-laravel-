@@ -4,14 +4,14 @@
     
     <form action="{{url('events')}}" method="post">
         @csrf
-        <div class="mb-3 row" >
-            <label for="title" class="col-sm-2 col-form-label ">Titre de l'évènement</label>
+        <div class="mb-0 row" >
+            <label for="title" class="col-sm-2 col-form-label ">Titre de l'événement</label>
             <div class="d-flex">
                 <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" id="title"
                        placeholder="Saisir le titre de l'évènement " value="{{ old('title') }}"/>
             </div>
         </div>
-        <div class="mb-3 row" >
+        <div class="mb-2 row" >
             <label for="game" class="col-sm-2 col-form-label ">Nom de jeu</label>
                             <div class="d-flex">
                             <select name="game" value="{{ old('game') }}" class="form-control @error('game') is-invalid @enderror form-control choix-input">
@@ -33,22 +33,22 @@
                         </select>
             </div>
         </div>
-        <div class="mb-3 row" >
-            <label for="NumP" class="col-sm-2 col-form-label ">Nombre de participants</label>
+        <div class="mb-2 row" >
+            <label for="NumP" class="col-sm-3 col-form-label ">Nombre de participants</label>
             <div class="d-flex">
                 <input type="number" class="form-control @error('NumP') is-invalid @enderror" name="NumP" id="NumP"
                        placeholder="Saisir le nombre de participant maximale" value="{{ old('NumP') }}"/>
             </div>
         </div>
-        <div class="mb-3 row">
-            <label for="date" class="col-sm-2 col-form-label">Date de l'évènement</label>
+        <div class="mb-2 row">
+            <label for="date" class="col-sm-2 col-form-label">Date de l'événement</label>
             <div class="d-flex">
                 <input type="datetime-local" class="form-control @error('date') is-invalid @enderror" name="date" id="date"
                        placeholder="Saisir la date de l'évènement " value="{{ old('date') }}"/>
             </div>
         </div>
         <div class="mb-3 row">
-            <label for="message" class="col-sm-2 col-form-label ">Déscription</label>
+            <label for="message" class="col-sm-2 col-form-label ">Description</label>
             <div class="d-flex">
  <textarea class="form-control @error('message') is-invalid @enderror" id="message" name="message" rows="3"
            placeholder="Vous pouvez presicer plus de details à propos votre évènement "> {{ old('message') }}</textarea>

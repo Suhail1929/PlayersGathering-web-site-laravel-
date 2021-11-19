@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="card-header pb-0">
-  <h6>La liste des évènements gaming</h6>
+  <h6>La liste des événements</h6>
 </div>
 <table>
   <tbody>
@@ -34,9 +34,9 @@
       <td>
         @auth
         @if(Gate::allows('Utilisateur', $events))
-        <a class="btn btn-warning" href="{{route('events.edit',$events->id)}}">Editer</a> 
+        <a class="btn btn-warning" href="{{route('events.edit',$events->id)}}">Modifier</a> 
         @endif
-        @else <button type="submit" class="btn btn-secondary">connecter pour participer </button> 
+        @else <button type="submit" class="btn btn-secondary">Connecter pour participer </button> 
         @endauth
       </td>
     </tr>
