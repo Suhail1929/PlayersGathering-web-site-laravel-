@@ -35,7 +35,7 @@
                             @if(Auth::user()->id_role==1)
                             <option value="1">Admin</option>
                             @endif
-                            <option value="2">Organisateur</option>
+                            <option value="2">Modérateur</option>
                             <option value="3" selected>Utilisateur</option>
                             
                         </select>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
@@ -10,7 +10,10 @@ Use DB;
 class UsersGestionController extends Controller
 {
     public function index()
-    {
+    {   if(!Auth::check())
+        { 
+            return redirect('login');
+        }
         $usersList = User::orderBy('id_role', 'Asc')->take(50)->get();
         return view('users.ListeUtilisateur', ['usersList' => $usersList]);
     }
@@ -42,12 +45,14 @@ class UsersGestionController extends Controller
         return redirect()->route('users');
 
     }
-    public function showuser($id)
-    {
-        return view('users.showuser', ['users' => User::findOrFail($id)]);
-    }
+
+    
     public function destroy($id)
     {
+        if(!Auth::check())
+       { 
+           return redirect('login');
+       }
         $users = User::findOrFail($id);
         $users->delete();
         return redirect()->route('users');

@@ -26,9 +26,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get(
     '/dashboard',
     [App\Http\Controllers\EventsController::class, 'index'])->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get(
+Route::middleware(['auth:sanctum', 'verified','admin'])->get(
         '/users',
         [App\Http\Controllers\UsersGestionController::class, 'index'])->name('users');
 
-Route::get('page1', function () { return view("page1"); })->middleware('auth');
+
 
