@@ -12,5 +12,20 @@
 @if (time() < strtotime($events->date))
 <a class="btn btn-success" href="{{route('events.show', $events->id)}}">Participer</a>
 @endif
+@auth
+        @if(Gate::allows('Utilisateur', $events))
+        <a class="btn btn-warning" href="{{route('events.edit',$events->id)}}">Editer</a> 
+        @endif
+        @else <button type="submit" class="btn btn-secondary">connecter pour participer </button> 
+        @endauth
+        <form action="{{route('events.destroy', $events->id)}}" method="POST">
+        @if(Gate::allows('Utilisateur', $events))
+        @method('DELETE')
+        @csrf
+        @auth
+        <button type="submit" class="btn btn-danger">Supprimer</button>
+        @endauth
+        @endif
+      </form>
 @endauth
 @endsection

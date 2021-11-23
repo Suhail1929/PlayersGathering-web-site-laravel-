@@ -50,13 +50,9 @@
                         <span class="text-secondary text-xs font-weight-bold"><?php echo e(strftime('%d/%m/%Y à %H:%m', strtotime($events->date))); ?></span>
                       </td>
                       <td class="align-middle">
-                      <?php if(auth()->guard()->check()): ?>
                         <a href="<?php echo e(route('events.show', $events->id)); ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Consulter
                         </a>
-                       <?php else: ?> <a href="<?php echo e(url('/login')); ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user"> 
-                        Connecter pour participer</a>
-                        <?php endif; ?>
                       </td>
                     </tr>
                     
