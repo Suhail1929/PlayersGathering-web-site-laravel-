@@ -51,14 +51,9 @@
                         <span class="text-secondary text-xs font-weight-bold">{{strftime('%d/%m/%Y à %H:%m', strtotime($events->date))}}</span>
                       </td>
                       <td class="align-middle">
-                      @auth
-                      @if(Gate::allows('Utilisateur', $events))
                         <a href="{{route('events.show', $events->id)}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Consulter
-                        </a>@endif
-                       @else <a href="{{ url('/login') }}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user"> 
-                        Connecter pour participer</a>
-                        @endauth
+                        </a>
                       </td>
                     </tr>
                     

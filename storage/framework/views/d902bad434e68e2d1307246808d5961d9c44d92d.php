@@ -51,10 +51,9 @@
                       </td>
                       <td class="align-middle">
                       <?php if(auth()->guard()->check()): ?>
-                      <?php if(Gate::allows('Utilisateur', $events)): ?>
                         <a href="<?php echo e(route('events.show', $events->id)); ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Consulter
-                        </a><?php endif; ?>
+                        </a>
                        <?php else: ?> <a href="<?php echo e(url('/login')); ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user"> 
                         Connecter pour participer</a>
                         <?php endif; ?>
