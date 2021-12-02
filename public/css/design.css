@@ -6,7 +6,10 @@ input#password-confirm, input#password, input#email, input#name {
   overflow-y:scroll;
   height:530px;
 }
-
+.espaceinput {
+  margin-left: 5px!important;
+  margin-right: 5px!important;
+}
 
   i{
     width: 20px!important; 

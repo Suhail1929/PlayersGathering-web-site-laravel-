@@ -2,7 +2,7 @@
 
 
 <?php $__env->startSection('content'); ?>
-<i><?php echo e(strftime('%d/%m/%Y à %H:%m', strtotime($events->date))); ?></i><br/>
+<i><?php echo e(strftime('%d/%m/%Y à %H:%M', strtotime($events->date))); ?></i><br/>
 <strong><?php echo e($events->title); ?></strong>
 <?php echo e($events->message); ?><br/>
 <em>par <?php echo e($events->user->name); ?></em><br/>

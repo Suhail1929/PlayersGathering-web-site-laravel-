@@ -54,6 +54,7 @@ class UsersGestionController extends Controller
            return redirect('login');
        }
         $users = User::findOrFail($id);
+        $users->events->each->delete();
         $users->delete();
         return redirect()->route('users');
     }

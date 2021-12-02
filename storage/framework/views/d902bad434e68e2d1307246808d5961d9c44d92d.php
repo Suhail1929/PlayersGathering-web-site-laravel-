@@ -1,11 +1,16 @@
 <?php $__env->startSection('title'); ?> Les 10 dernières actualités <?php $__env->stopSection(); ?>
-
+<?php $__env->startSection('rechercheBarre'); ?>
+<div class="input-group">
+              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+              <input type="text" name="search" id="search" class="form-control" placeholder="Rechercher un évènement..." />
+            </div>
+<?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
 
             <div class="card-header pb-0">
               <h6>Liste des évènements</h6>
             </div>
-            <div class="card-body px-0 pt-0 pb-2">
+            <div class="card-body px-0 pt-0 pb-2 " >
               <div class="table-responsive p-0">
               <div class="scrollit">
 <table class="table align-items-center mb-0" class="table">
@@ -19,7 +24,7 @@
                     </tr>
                   </thead>
                   
-                  <tbody>
+                  <tbody class="tableevent">
                   
                   <?php $__currentLoopData = $eventsList; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $events): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                   
@@ -47,7 +52,7 @@
                         
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold"><?php echo e(strftime('%d/%m/%Y à %H:%m', strtotime($events->date))); ?></span>
+                        <span class="text-secondary text-xs font-weight-bold"><?php echo e(strftime('%d/%m/%Y à %H:%M', strtotime($events->date))); ?></span>
                       </td>
                       <td class="align-middle">
                         <a href="<?php echo e(route('events.show', $events->id)); ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
@@ -57,15 +62,20 @@
                     </tr>
                     
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    
-                    </tbody>
-                    
-                    </table>
-                    </div>
-</div>
-</div>
-
-
+                   
+</tbody>
                   <?php $__env->stopSection(); ?>
+
+
+
+
+
+
+
+
+
+
+
+
 
 <?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/mtar0001/public_html/playergg/resources/views/events/list.blade.php ENDPATH**/ ?>

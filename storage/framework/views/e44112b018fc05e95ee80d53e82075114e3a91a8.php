@@ -20,30 +20,29 @@
             </div>
         </div>
         <div class="mb-2 row" >
-            <label for="game" class="col-sm-2 col-form-label ">Nom du jeu</label>
-            <div class="d-flex">
-                        <select name="game" value="<?php echo e(old('game')); ?>" class="form-control <?php $__errorArgs = ['game'];
+        <label for="game" class="col-sm-2 col-form-label ">Nom de jeu</label>
+                            <div class="d-flex">
+                            <select name="game" value="<?php echo e(old('game')); ?>" class="form-control <?php $__errorArgs = ['game'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
 $message = $__bag->first($__errorArgs[0]); ?> is-invalid <?php unset($message);
 if (isset($__messageOriginal)) { $message = $__messageOriginal; }
 endif;
-unset($__errorArgs, $__bag); ?>">
-                            <option >Choissez un jeu :</option>
+unset($__errorArgs, $__bag); ?> form-control choix-input">
                             <option value="League of Legends">League of Legends</option>
                             <option value="Counter-Strike: Global Offensive">Counter-Strike: Global Offensive</option>
                             <option value="VALORANT">Valorant</option>
                             <option value="AMONG US">Among Us</option>
                             <option value="APEX LEGENDS">Apex Legends</option>
-                            <option value="FORTNITE">Fortine</option>
+                            <option value="FORTNITE">Fortnite</option>
                             <option value="TEAM FORTRESS 2">Team Fortress 2</option>
                             <option value="DOTA 2">Dota 2</option>
                             <option value="OVERWATCH">Overwatch</option>
                             <option value="WARZONE">Warzone</option>
                             <option value="FIFA 2022">Fifa 2022</option>
                             <option value="ROCKET LEAGUE">Rocket League</option>
-                            <option value="GRAND THEFT AUTO ONLINE">GTA Online</option>
+                            <option value="GRAND THEFT AUTO ONLINE">GTA online</option>
                             <option value="Minecraft">Minecraft</option>
                             <option value="autre">Autre</option>
                         </select>
@@ -78,6 +77,7 @@ unset($__errorArgs, $__bag); ?>">
         </div>
     </form>
     </div>
+    <script>$(".choix-input").select2({ tags: true});</script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/mtar0001/public_html/playergg/resources/views/events/edit.blade.php ENDPATH**/ ?>

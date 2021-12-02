@@ -3,7 +3,7 @@
 
 
 @section('content')
-<i>{{strftime('%d/%m/%Y à %H:%m', strtotime($events->date))}}</i><br/>
+<i>{{strftime('%d/%m/%Y à %H:%M', strtotime($events->date))}}</i><br/>
 <strong>{{$events->title}}</strong>
 {{$events->message}}<br/>
 <em>par {{$events->user->name}}</em><br/>

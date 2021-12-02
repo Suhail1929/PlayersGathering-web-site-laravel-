@@ -1,12 +1,17 @@
 @extends('template')
 @section('title') Les 10 dernières actualités @endsection
-
+@section('rechercheBarre')
+<div class="input-group">
+              <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+              <input type="text" name="search" id="search" class="form-control" placeholder="Rechercher un évènement..." />
+            </div>
+@endsection
 @section('content')
 
             <div class="card-header pb-0">
               <h6>Liste des évènements</h6>
             </div>
-            <div class="card-body px-0 pt-0 pb-2">
+            <div class="card-body px-0 pt-0 pb-2 " >
               <div class="table-responsive p-0">
               <div class="scrollit">
 <table class="table align-items-center mb-0" class="table">
@@ -20,7 +25,7 @@
                     </tr>
                   </thead>
                   
-                  <tbody>
+                  <tbody class="tableevent">
                   
                   @foreach($eventsList as $events)
                   
@@ -48,7 +53,7 @@
                         
                       </td>
                       <td class="align-middle text-center">
-                        <span class="text-secondary text-xs font-weight-bold">{{strftime('%d/%m/%Y à %H:%m', strtotime($events->date))}}</span>
+                        <span class="text-secondary text-xs font-weight-bold">{{strftime('%d/%m/%Y à %H:%M', strtotime($events->date))}}</span>
                       </td>
                       <td class="align-middle">
                         <a href="{{route('events.show', $events->id)}}" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
@@ -58,13 +63,18 @@
                     </tr>
                     
                     @endforeach
-                    
-                    </tbody>
-                    
-                    </table>
-                    </div>
-</div>
-</div>
-
-
+                   
+</tbody>
                   @endsection
+
+
+
+
+
+
+
+
+
+
+
+

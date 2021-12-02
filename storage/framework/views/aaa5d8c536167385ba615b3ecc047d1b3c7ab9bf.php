@@ -1,12 +1,12 @@
 <?php $__env->startSection('title'); ?> Création d'un évènement <?php $__env->stopSection(); ?>
 <?php $__env->startSection('content'); ?>
     
-    <form action="<?php echo e(url('events')); ?>" method="post">
+    <form action="<?php echo e(url('events')); ?>" method="post" class="espaceinput">
         <?php echo csrf_field(); ?>
         <div class="mb-0 row" >
             <label for="title" class="col-sm-2 col-form-label ">Titre de l'événement</label>
             <div class="d-flex">
-                <input type="text" class="form-control <?php $__errorArgs = ['title'];
+                <input type="text" class=" form-control <?php $__errorArgs = ['title'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -17,10 +17,10 @@ unset($__errorArgs, $__bag); ?>" name="title" id="title"
                        placeholder="Saisir le titre de l'évènement " value="<?php echo e(old('title')); ?>"/>
             </div>
         </div>
-        <div class="mb-2 row" >
-            <label for="game" class="col-sm-2 col-form-label ">Nom de jeu</label>
+        <div class=" mb-2 row" >
+            <label for="game" class=" col-sm-2 col-form-label ">Nom de jeu</label>
                             <div class="d-flex">
-                            <select name="game" value="<?php echo e(old('game')); ?>" class="form-control <?php $__errorArgs = ['game'];
+                            <select name="game" value="<?php echo e(old('game')); ?>" class=" form-control <?php $__errorArgs = ['game'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -49,7 +49,7 @@ unset($__errorArgs, $__bag); ?> form-control choix-input">
         <div class="mb-2 row" >
             <label for="NumP" class="col-sm-3 col-form-label ">Nombre de participants</label>
             <div class="d-flex">
-                <input type="number" class="form-control <?php $__errorArgs = ['NumP'];
+                <input type="number" class="  form-control <?php $__errorArgs = ['NumP'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }
@@ -63,7 +63,7 @@ unset($__errorArgs, $__bag); ?>" name="NumP" id="NumP"
         <div class="mb-2 row">
             <label for="date" class="col-sm-2 col-form-label">Date de l'événement</label>
             <div class="d-flex">
-                <input type="datetime-local" class="form-control <?php $__errorArgs = ['date'];
+                <input type="datetime-local" class="  form-control <?php $__errorArgs = ['date'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
 if (isset($message)) { $__messageOriginal = $message; }

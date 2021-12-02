@@ -10,13 +10,13 @@
             </ul>
         </div>
     @endif
-    <form action="{{url('users',  $users->id)}}" method="post">
+    <form action="{{url('users',  $users->id)}}" method="post" class="espaceinput">
         @csrf
         @method('PUT')
         <div class="mb-3 row" >
             <label for="name" class="col-sm-2 col-form-label ">Nom de l'utilisateur</label>
             <div class="d-flex">
-            <input type="text" class="form-control" name="name" id="name"
+            <input type="text" class="espaceinput form-control" name="name" id="name"
                        placeholder="Saisir le nouveau nom" value="{{$users->name}}"/>
             
             </div>
@@ -24,7 +24,7 @@
         <div class="mb-3 row" >
             <label for="email" class="col-sm-2 col-form-label ">Email de l'utilisateur</label>
             <div class="d-flex">
-            <input type="email" class="form-control" name="email" id="email"
+            <input type="email" class="espaceinput form-control" name="email" id="email"
                        placeholder="Saisir le nouveau email" value="{{$users->email}}"/>
             </div>
         </div>
