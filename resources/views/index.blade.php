@@ -10,7 +10,6 @@
               <div class="row">
                 <div class="col-lg-6">
                   <div class="d-flex flex-column h-100">
-                    <p class="mb-1 pt-2 text-bold">PlayersGathering</p>
                     <h5 class="font-weight-bolder">Vous pouvez organiser votre propre événement.</h5>
                     <p class="mb-5">Laissez des personnes rejoindre votre événement ou invitez-en pour jouer en communauté</p>
                     <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="{{route('events.create')}}">
@@ -22,7 +21,7 @@
                 <div class="col-lg-5 ms-auto text-center mt-5 mt-lg-0">
                   <div class="bg-gradient-primary border-radius-lg h-100">
                     
-                    <div class="position-relative d-flex align-items-center justify-content-center h-100">
+                    <div class="position-relative d-flex align-items-center justify-content-center h-90">
                       <img class="w-90 position-relative z-index-2 pt-2" src="{{ asset('image/manette.png')}}" >
                     </div>
                   </div>
@@ -37,10 +36,9 @@
               <span class="mask bg-gradient-dark"></span>
               <div class="card-body position-relative z-index-1 d-flex flex-column h-100 p-3">
                 <h5 class="text-white font-weight-bolder mb-4 pt-2">Trouvez la communauté qui vous correspond.</h5>
-                <p class="text-white"></p>
-                <a class="text-body text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="{{ url('/events') }}">
+                <a class="text-white text-sm font-weight-bold mb-0 icon-move-right mt-auto" href="{{ url('/events') }}">
                       La liste des événements en cours ici
-                      <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true"></i>
+                      <i class="fas fa-arrow-right text-sm ms-1" aria-hidden="true" ></i>
                     </a>
               </div>
             </div>

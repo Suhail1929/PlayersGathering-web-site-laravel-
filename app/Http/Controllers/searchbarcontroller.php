@@ -63,7 +63,7 @@ class searchbarcontroller extends Controller
      } else {
       $output = '
       <tr>
-      <td align="center" colspan="5">Aucun évènement trouvé.</td>
+      <td align="center" colspan="5">Aucun événement trouvé.</td>
       </tr>
       ';
     }

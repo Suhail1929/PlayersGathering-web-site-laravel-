@@ -67,13 +67,13 @@
                       <td class="align-middle">
                         @if(Auth::user()->id_role==1)
                           @if($users->id_role==2 || $users->id_role==3)
-                          <a class="btn btn-warning" href="{{route('users.edit',$users->id)}}">
+                          <a class="btn btn-info" href="{{route('users.edit',$users->id)}}">
                         Modifier
                       </a> 
                           @endif
                         @elseif(Auth::user()->id_role==2)
                           @if($users->id_role==3)
-                          <a class="btn btn-warning" href="{{route('users.edit',$users->id)}}">
+                          <a class="btn btn-info" href="{{route('users.edit',$users->id)}}">
                         Modifier
                       </a> 
                           @endif
