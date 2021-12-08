@@ -19,7 +19,7 @@ class CreateMembresTable extends Migration
             $table->string('prenom', 100);
             $table->string('mail', 100);
             $table->string('jeupref', 100);
-            $table->unsignedBigInteger('events_id');
+            $table->unsignedBigInteger('events_id')->nullable();
             $table->foreign('events_id')->references('id')->on('events');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
