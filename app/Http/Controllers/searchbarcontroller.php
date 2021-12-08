@@ -53,7 +53,7 @@ class searchbarcontroller extends Controller
          <span class='text-secondary text-xs font-weight-bold'>".strftime('%d/%m/%Y à %H:%M', strtotime($row->date))."</span>
          </td>
          <td class='align-middle'>
-         <a href='".route('events.show', $row->id)."' class='text-secondary font-weight-bold text-xs' data-toggle='tooltip' data-original-title='Edit user'>
+         <a href='".route('events.show', $row->id)."' class='btn btn-secondary btn-sm' data-toggle='tooltip' data-original-title='Edit user'>
          Consulter
          </a>
          </td>
