@@ -19,23 +19,23 @@
             <label for="game" class=" col-sm-2 col-form-label ">Nom de jeu</label>
             <div class="d-flex">
                 <select name="game" value="{{ old('game') }}" class=" form-control @error('game') is-invalid @enderror form-control choix-input">
-                    <option value="AMONG US">Among Us</option>
-                    <option value="APEX LEGENDS">Apex Legends</option>
+                    <option value="Among Us">Among Us</option>
+                    <option value="Apex Legends">Apex Legends</option>
                     <option value="Counter-Strike: Global Offensive">Counter-Strike: Global Offensive</option>
-                    <option value="DBDL">Dead By Daylight</option>
-                    <option value="DOTA 2">Dota 2</option>
-                    <option value="FIFA 2022">Fifa 2022</option>
-                    <option value="FORTNITE">Fortnite</option>
-                    <option value="GRAND THEFT AUTO ONLINE">GTA online</option>
+                    <option value="Dead By Daylight">Dead By Daylight</option>
+                    <option value="Dota 2">Dota 2</option>
+                    <option value="Fifa 2022">Fifa 2022</option>
+                    <option value="Fortnite">Fortnite</option>
+                    <option value="GTA Online">GTA Online</option>
                     <option value="League of Legends">League of Legends</option>
                     <option value="Minecraft">Minecraft</option>
                     <option value="Overcooked">Overcooked</option>
-                    <option value="OVERWATCH">Overwatch</option>
-                    <option value="ROCKET LEAGUE">Rocket League</option>
+                    <option value="Overwatch">Overwatch</option>
+                    <option value="Rocket League">Rocket League</option>
                     <option value="Stardew Valley">Stardew Valley</option>
-                    <option value="TEAM FORTRESS 2">Team Fortress 2</option>
-                    <option value="VALORANT">Valorant</option>
-                    <option value="WARZONE">Warzone</option>
+                    <option value="Team Fortress 2">Team Fortress 2</option>
+                    <option value="Valorant">Valorant</option>
+                    <option value="Warzone">Warzone</option>
                     <option value="Autre">Autre</option>
                 </select>
             </div>
