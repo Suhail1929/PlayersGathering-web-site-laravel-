@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Membre;
 use App\Models\Events;
+use Illuminate\Support\Facades\Gate;
 
 
 class MembreController extends Controller
@@ -15,9 +16,11 @@ class MembreController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //$membreList = Membre::orderBy('prenom', 'desc')->take(50)->get();
+    public function index(Request $request){
+        $event = Events::findOrFail($request->input('events_id'));
+        if(!Gate::allows('Utilisateur', $event)){
+            abort('403');
+        }
         return view('membre.list');
     }
 
